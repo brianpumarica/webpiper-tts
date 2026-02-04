@@ -1,0 +1,12 @@
+services:
+  piper-tts:
+    image: arkdevuk/webpiper:latest
+    container_name: piper-tts
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./output:/output
+      - ./voices:/voice
+    restart: unless-stopped
+    environment:
+      - API_KEY=mysecurekey  # Opcional
